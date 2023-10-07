@@ -12,11 +12,28 @@ const questions = [
     {
         type:'input',
         name:'description',
-        message:'Provide a description of your project',
+        message:'Provide a short description of your project:' ,
+    },
+   {
+        type: 'input',
+        name: 'motivation',
+         message: 'What was your motivation for this project?',
     },
     {
-        type:
-    }
+        type: 'input',
+        name: 'buildReason',
+        message: 'Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")',
+    },
+   {
+        type: 'input',
+        name: 'problemSolved',
+        message: 'What problem does it solve?',
+    },
+    {
+        type: 'input',
+        name: 'whatLearned',
+        message: 'What did you learn?',
+    },
 ];
 
 // TODO: Create a function to write README file
