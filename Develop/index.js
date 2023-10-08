@@ -23,7 +23,7 @@ const questions = [
     {
         type: 'input',
         name: 'buildReason',
-        message: 'Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")',
+        message: 'Why did you build this project?',
     },
    {
         type: 'input',
@@ -96,6 +96,11 @@ function init() {
     inquirer
     .prompt(questions)
     .then((answers)=>{
+        const readmeContent = `# ${answers.projectTitle}\n\n##${answers.description}\n\n`+
+        `## Installation\n\n${answers.installation}\n\n` +
+        `## Usage\n\n${answers.usage}\n\n` +
+        `## Credits\n\n${answers.credits}\n\n`;
+
 
     })
 }
