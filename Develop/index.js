@@ -116,6 +116,7 @@ function init() {
         readmeContent += `## How to Contribute\n\nProvide guidelines for contributions...\n\n`;
     }
     readmeContent += `## Tests\n\n${answers.Tests}\n`;
+    const fileName = 'README.md'
 
 // Function call to initialize app
 init(); 
