@@ -101,9 +101,14 @@ function init() {
         `## Usage\n\n${answers.usage}\n\n` +
         `## Credits\n\n${answers.credits}\n\n`;
 
+    if (answers.tableofcontents){
+      readmeContent += '##Table of Contents\n\n';
+      questions.forEach((question) => {
+        if (!['motivation', 'buildReason', 'problemSolved', 'whatLearned'].includes(question.name)) {
+        readmeContent += `- [${question.name}](#${question.name.toLowerCase()})\n`;
+        }
+    });
 
-    })
-}
 
 // Function call to initialize app
 init(); 
