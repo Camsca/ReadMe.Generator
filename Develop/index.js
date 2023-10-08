@@ -80,23 +80,26 @@ const questions = [
 ];
 
 // function to write README file
-function writeTo(fileName, data) {
+function writeTo(fileName, data,callback) {
     fs.writeFile(fileName,data,(error)=>{
         if(error){
             console.error(error);
         }else{
             console.log('README.md successfully created')
         }
-
+        if (callback) {
+            callback(error);
+        }
     });
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 function init() { 
     inquirer
     .prompt(questions)
     .then((answers)=>{
-        const readmeContent = `# ${answers.projectTitle}\n\n##${answers.description}\n\n`+
+        console.log('Answers received:', answers);
+        let readmeContent = `# ${answers.projectTitle}\n\n##${answers.description}\n\n`+
         `## Installation\n\n${answers.installation}\n\n` +
         `## Usage\n\n${answers.usage}\n\n` +
         `## Credits\n\n${answers.credits}\n\n`;
@@ -107,8 +110,10 @@ function init() {
         if (!['motivation', 'buildReason', 'problemSolved', 'whatLearned'].includes(question.name)) {
         readmeContent += `- [${question.name}](#${question.name.toLowerCase()})\n`;
         }
-        readmeContent += '\n';//linea nuevas
+
     });
+    readmeContent += '\n';//linea nuevas
+    }
     if (answers.Features) {
         readmeContent += `## Features\n\nAdd your features here...\n\n`;
     }
@@ -117,7 +122,11 @@ function init() {
     }
     readmeContent += `## Tests\n\n${answers.Tests}\n`;
     const fileName = 'README.md'
-
+    writeTo(fileName, readmeContent);
+})
+.catch((error) => {
+    console.error(error);
+});
+}
 // Function call to initialize app
 init(); 
-erdf
