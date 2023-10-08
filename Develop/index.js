@@ -112,8 +112,9 @@ function init() {
     if (answers.Features) {
         readmeContent += `## Features\n\nAdd your features here...\n\n`;
     }
-
-
+    if (answers['How to Contribute']) {
+        readmeContent += `## How to Contribute\n\nProvide guidelines for contributions...\n\n`;
+    }
 
 // Function call to initialize app
 init(); 
