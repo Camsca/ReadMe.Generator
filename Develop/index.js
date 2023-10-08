@@ -115,6 +115,7 @@ function init() {
     if (answers['How to Contribute']) {
         readmeContent += `## How to Contribute\n\nProvide guidelines for contributions...\n\n`;
     }
+    readmeContent += `## Tests\n\n${answers.Tests}\n`;
 
 // Function call to initialize app
 init(); 
