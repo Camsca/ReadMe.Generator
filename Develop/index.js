@@ -107,7 +107,12 @@ function init() {
         if (!['motivation', 'buildReason', 'problemSolved', 'whatLearned'].includes(question.name)) {
         readmeContent += `- [${question.name}](#${question.name.toLowerCase()})\n`;
         }
+        readmeContent += '\n';//linea nuevas
     });
+    if (answers.Features) {
+        readmeContent += `## Features\n\nAdd your features here...\n\n`;
+    }
+
 
 
 // Function call to initialize app
