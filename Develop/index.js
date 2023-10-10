@@ -2,6 +2,7 @@
 const inquirer = require ('inquirer');
 const fs = require ('fs');
 const { error } = require('console');
+const { renderLicenseBadge, renderLicenseSection, generateMarkdown } = require('./utils/generateMarkdown');
 
 //  Array of questions for user input
 const questions = [
