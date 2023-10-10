@@ -156,7 +156,9 @@ function init() {
         readmeContent += `## How to Contribute\n\nProvide guidelines for contributions...\n\n`;
     }
     readmeContent += `## Tests\n\n${answers.Tests}\n`;
-    const fileName = 'README.md'
+    readmeContent += `## Questions\n\nYou can find me on GitHub as [${answers.githubUsername}](https://github.com/${answers.githubUsername}). ` +
+    `Feel free to reach out to me at ${answers.email} with any additional questions.\n`;
+ const fileName = 'README.md'
     writeTo(fileName, readmeContent);
 })
 .catch((error) => {
