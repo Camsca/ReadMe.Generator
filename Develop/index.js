@@ -11,10 +11,26 @@ const questions = [
         message:'Enter your project title:',
     }, 
     {
+        type: 'list',
+        name: 'license',
+        message: 'Choose a license for your project:',
+        choices: ['MIT', 'GPL-3.0', 'Apache-2.0', 'BSD-2-Clause', 'CC-BY-SA-4.0', 'EPL-2.0', 'Mozilla-2.0', 'Unlicense'],
+      },
+    {
         type:'input',
         name:'description',
         message:'Provide a short description of your project:' ,
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your email address:',
+      },
+    {
+        type: 'input',
+        name: 'githubUsername',
+        message: 'Enter your GitHub username:',
+      },
    {// todo esto va a a ir en la misma descripion ???/
         type: 'input',
         name: 'motivation',
@@ -48,7 +64,7 @@ const questions = [
 
     },
     {
-        type:'statement',
+        type:'string',
         name:'usage',
         message:'To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:\n\n```md\n![alt text](assets/images/screenshot.png)\n```',
     },
