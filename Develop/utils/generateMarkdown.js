@@ -55,4 +55,9 @@ function generateMarkdown(data) {
   ${data.credits}
   `;
   }
-module.exports = generateMarkdown;
+  module.exports={
+    renderLicenseBadge,
+    renderLicenseSection,
+    generateMarkdown,
+  }
+  
