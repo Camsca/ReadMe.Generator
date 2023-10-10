@@ -143,7 +143,12 @@ function init() {
        readmeContent += `## Installation\n\n${answers.installation}\n\n` +
        `## Usage\n\n${answers.usage}\n\n` +
        `## Credits\n\n${answers.credits}\n\n`;
-    }
+    
+        // License Section
+        const licenseBadge = `[![License](https://img.shields.io/badge/license-${answers.license}-brightgreen)](https://opensource.org/licenses/${answers.license})`;
+        const licenseSection = `## License\n\nThis project is licensed under the [${answers.license}](https://opensource.org/licenses/${answers.license}) license.\n\n`;
+        readmeContent += `${licenseBadge}\n\n${licenseSection}\n\n`;
+
     if (answers.Features) {
         readmeContent += `## Features\n\nAdd your features here...\n\n`;
     }
