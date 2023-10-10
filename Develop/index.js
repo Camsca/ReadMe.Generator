@@ -139,7 +139,10 @@ function init() {
         readmeContent += `- [License](#license)\n`;
     }
 }
-    readmeContent += '\n';//linea nuevas
+       // Installation, Usage, Credits
+       readmeContent += `## Installation\n\n${answers.installation}\n\n` +
+       `## Usage\n\n${answers.usage}\n\n` +
+       `## Credits\n\n${answers.credits}\n\n`;
     }
     if (answers.Features) {
         readmeContent += `## Features\n\nAdd your features here...\n\n`;
