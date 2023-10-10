@@ -21,18 +21,38 @@ function renderLicenseSection(license) {
   return `## License\n\nThis project is licensed under the [${license}](${licenseBadge}) license.`;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  const licenseBadge = renderLicenseBadge(data.license);
-  const licenseSection = renderLicenseSection(data.license);
-}
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const licenseBadge = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license);
   return `# ${data.title}
+  ${licenseBadge}
 
-`;
-}
-
+  ## Description
+  
+  ${data.description}
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  ${tableOfContentsSection}
+  ${licenseSection ? '- [License](#license)\n' : ''}
+  
+  ## Installation
+  
+  ${data.installation}
+  
+  ## Usage
+  
+  ${data.usage}
+  
+  ## Credits
+  
+  ${data.credits}
+  `;
+  }
 module.exports = generateMarkdown;
