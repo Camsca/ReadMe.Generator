@@ -116,10 +116,12 @@ function init() {
     .prompt(questions)
     .then((answers)=>{
         console.log('Answers received:', answers);
-        let readmeContent = `# ${answers.projectTitle}\n\n##${answers.description}\n\n`+
-        `## Installation\n\n${answers.installation}\n\n` +
-        `## Usage\n\n${answers.usage}\n\n` +
-        `## Credits\n\n${answers.credits}\n\n`;
+
+       let readmeContent = `# ${answers.projectTitle}\n\n## Description\n${answers.description}\n\n` +
+            `## Motivation\n${answers.motivation}\n\n` +
+            `## Build Reason\n${answers.buildReason}\n\n` +
+            `## Problem Solved\n${answers.problemSolved}\n\n` +
+            `## What I Learned\n${answers.whatLearned}\n\n`;
 
     if (answers.tableofcontents){
       readmeContent += '##Table of Contents\n\n';
