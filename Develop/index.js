@@ -123,14 +123,22 @@ function init() {
             `## Problem Solved\n${answers.problemSolved}\n\n` +
             `## What I Learned\n${answers.whatLearned}\n\n`;
 
-    if (answers.tableofcontents){
-      readmeContent += '##Table of Contents\n\n';
-      questions.forEach((question) => {
-        if (!['motivation', 'buildReason', 'problemSolved', 'whatLearned'].includes(question.name)) {
-        readmeContent += `- [${question.name}](#${question.name.toLowerCase()})\n`;
-        }
-
-    });
+   // Optional Table of Contents
+   if (answers['tableofcontents?']) {
+    readmeContent += '## Table of Contents\n\n';
+    if (answers.installation) {
+        readmeContent += `- [Installation](#installation)\n`;
+    }
+    if (answers.usage) {
+        readmeContent += `- [Usage](#usage)\n`;
+    }
+    if (answers.credits) {
+        readmeContent += `- [Credits](#credits)\n`;
+    }
+    if (answers.license) {
+        readmeContent += `- [License](#license)\n`;
+    }
+}
     readmeContent += '\n';//linea nuevas
     }
     if (answers.Features) {
